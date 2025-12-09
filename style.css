@@ -1,0 +1,101 @@
+body {
+  text-align: center;
+}
+
+/*завдання #1*/
+
+.container {
+  border: 3px solid orange;
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.container div {
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+  animation: progress-bar 3s linear alternate infinite;
+}
+
+@keyframes progress-bar {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 150px;
+  }
+}
+
+/*завдання #2*/
+
+.heart {
+  width: 515px;
+  margin: 0 auto;
+}
+
+.heart img {
+  filter: grayscale(100%);
+  transition: 5s;
+}
+.heart img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+/*завдання #3*/
+.book h1 {
+  margin-bottom: 50px;
+}
+
+.book {
+  text-align: center;
+  height: 50vh;
+}
+
+.book img {
+  width: 70px;
+  height: auto;
+  position: relative;
+  top: 50vh;
+  margin: 10px;
+}
+
+.book img.calc {
+  animation: hello 2s 1 forwards;
+  transform: rotate(-45deg);
+  width: 50px;
+}
+
+.book img.book {
+  animation: hello 2s 0.5s 1 forwards;
+  transform: rotate(-25deg);
+}
+
+.book img.paper {
+  animation: hello 2s 1s 1 forwards;
+  transform: rotate(25deg);
+}
+
+.book img.palette {
+  animation: hello 2s 1.5s 1 forwards;
+  transform: rotate(45deg);
+  width: 50px;
+}
+
+.book img.pencil {
+  display: block;
+  left: 46%;
+  animation: hello 2s 2s 1 forwards;
+  transform: rotate(90deg);
+  width: 60px;
+}
+
+@keyframes hello {
+  from {
+    top: 50vh;
+  }
+  to {
+    top: 0;
+  }
+}
