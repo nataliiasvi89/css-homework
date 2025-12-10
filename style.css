@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+
+hr + p,
+h1 + p {
+  margin: 10px 0;
+  padding-bottom: 50px;
+}
+
+hr {
+  margin: 50px 0;
+}
+
+/*Завдання #1*/
+
+.clock {
+  height: 300px;
+  width: 300px;
+  border: 6px solid darkolivegreen;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  position: relative;
+}
+
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  background-color: darkolivegreen;
+  border-radius: 50%;
+}
+
+.big-сlock-hand {
+  width: 140px;
+  height: 3px;
+  background-color: darkolivegreen;
+  animation: clock-hand 5s infinite linear;
+  transform-origin: 2px 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.small-clock-hand {
+  width: 100px;
+  height: 4px;
+  background-color: darkolivegreen;
+  animation: clock-hand 22s infinite linear;
+  transform-origin: 2px 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+@keyframes clock-hand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Завдання #2*/
+
+/*Завдання #3*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.container div {
+  width: 50%;
+  position: relative;
+}
+
+.container div:nth-of-type(2),
+.container div:nth-of-type(3),
+.container div:nth-of-type(6) {
+  background-image: url("./images/cat.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  transition: background-size 1s;
+}
+
+.container div:nth-of-type(1),
+.container div:nth-of-type(4),
+.container div:nth-of-type(5) {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container div::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 0;
+  transition: 1s;
+}
+
+.container div:hover::before {
+  height: 100%;
+}
+
+.container div:hover {
+  background-size: 110%;
+}
